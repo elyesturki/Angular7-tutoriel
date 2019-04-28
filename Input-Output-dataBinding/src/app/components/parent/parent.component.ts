@@ -7,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
+  // from parent to child
   valueFromParent = "Hello from parent";
 
-  constructor() { }
+  // from child to parent
+  public valueFromChildToParent: string;
+
+  constructor() { } 
 
   ngOnInit() {
+  }
+
+  public setDataFromChild (data) {
+    console.log("data: ",data)
+    this.valueFromChildToParent = data;
   }
 
 }
