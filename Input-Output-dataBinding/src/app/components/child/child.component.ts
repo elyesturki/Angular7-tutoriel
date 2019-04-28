@@ -16,6 +16,10 @@ export class ChildComponent implements OnInit {
   public valueFromChild = "Hello from child";
   @Output() eventFromChild:EventEmitter<string> = new EventEmitter();
 
+  // delete other child
+  public toDelete:boolean;
+  @Output() eventDeleteChild:EventEmitter<boolean> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -24,6 +28,10 @@ export class ChildComponent implements OnInit {
   sendToParent() {
     console.log("sendToParent")
     this.eventFromChild.emit(this.valueFromChild);
+  }
+
+  deleteOtherChild() {
+    this.eventDeleteChild.emit(this.toDelete)
   }
 
 }

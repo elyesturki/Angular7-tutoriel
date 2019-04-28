@@ -13,6 +13,9 @@ export class ParentComponent implements OnInit {
   // from child to parent
   public valueFromChildToParent: string;
 
+  // delete other child
+  public deleteOtherChild: boolean = true;
+
   constructor() { } 
 
   ngOnInit() {
@@ -21,6 +24,12 @@ export class ParentComponent implements OnInit {
   public setDataFromChild (data) {
     console.log("data: ",data)
     this.valueFromChildToParent = data;
+  }
+
+  public setDeleteOtherChild (data) {
+    console.log("data: ",data);
+    this.deleteOtherChild = data
+
   }
 
 }

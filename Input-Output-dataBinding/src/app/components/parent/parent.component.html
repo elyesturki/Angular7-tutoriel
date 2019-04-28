@@ -3,6 +3,11 @@
   <hr class="my-2">
   <p class="lead">Value: <strong style="font-weight: bold">{{valueFromParent}}</strong></p>
   <p class="lead">Value from child: <strong style="font-weight: bold">{{valueFromChildToParent}}</strong></p>
+  <p>to delete child: {{deleteOtherChild}}</p>
 </div>
-<app-child [valFromP]="valueFromParent" (eventFromChild)="setDataFromChild($event)"></app-child>
+<app-child [valFromP]="valueFromParent" (eventFromChild)="setDataFromChild($event)" (eventDeleteChild)="setDeleteOtherChild($event)"></app-child>
+<app-child-to-delete *ngIf="deleteOtherChild"></app-child-to-delete>
+
+
+
   
