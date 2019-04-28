@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <h3 class="display-4">Parent</h3>
   <hr class="my-2">
-  <p class="lead">Value: </p>
-  <p class="lead">Value from child: <strong style="font-weight: bold"></strong></p>
+  <p class="lead">Value: <strong style="font-weight: bold">{{valueFromParent}}</strong></p>
+  <p class="lead">Value from child: </p>
 </div>
-<app-child></app-child>
+<app-child [valFromP]="valueFromParent"></app-child>
   
