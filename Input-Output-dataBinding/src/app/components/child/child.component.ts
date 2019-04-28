@@ -17,7 +17,7 @@ export class ChildComponent implements OnInit {
   @Output() eventFromChild:EventEmitter<string> = new EventEmitter();
 
   // delete other child
-  public toDelete:boolean;
+  public toDelete:boolean =false;
   @Output() eventDeleteChild:EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
