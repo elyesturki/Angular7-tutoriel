@@ -13,9 +13,8 @@ export class ListComponent implements OnInit {
   constructor( private _employeeService: ServiceDataService ) { }
 
   ngOnInit() {
-    this.employees = this._employeeService.getEmployees()
-
-        console.log(this.employees)
+    this._employeeService.getEmployees()
+        .subscribe(data => this.employees = data ) ;
   }
 
 }

@@ -3,21 +3,22 @@
     <thead>
       <tr>
        <th>Id</th>
-       <th>FirstName</th>
-       <th>LastName</th>
-       <th>Title</th>
+       <th>Name</th>
+       <th>Salary</th>
+       <th>Age</th>
        <th>Picture</th>
-       <th>ReportCount</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let employee of employees">
         <td scope="row">{{employee.id}}</td>
-        <td>{{employee.firstName}}</td>
-        <td>{{employee.lastName}}</td>
-        <td>{{employee.title}}</td>
-        <td><img [src]="employee.picture"></td>
-        <td>{{employee.reportCount}}</td>
+        <td>{{employee.employee_name}}</td>
+        <td>{{employee.employee_salary}}</td>
+        <td>{{employee.employee_age}}</td>
+        <td> 
+            <span *ngIf="!employee.profile_image">(No picture)</span>
+            <img *ngIf="employee.profile_image" [src]="employee.profile_image">
+        </td>
       </tr>
     </tbody>
   </table>
